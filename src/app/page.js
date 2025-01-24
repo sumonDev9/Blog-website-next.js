@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 
 
@@ -25,9 +26,11 @@ export default async function Home() {
 
     {/* View Details Button */}
     <div className="card-actions justify-start">
-      <button className="px-4 py-2 font-semibold rounded-md bg-blue-500 hover:bg-blue-600 text-white transition-all duration-300">
+     <Link href={`/blog/${post.id}`}>
+     <button className="px-4 py-2 font-semibold rounded-md bg-blue-500 hover:bg-blue-600 text-white transition-all duration-300">
         View Details
       </button>
+     </Link>
     </div>
   </div>
 </div>
