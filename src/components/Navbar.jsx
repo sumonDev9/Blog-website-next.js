@@ -1,18 +1,21 @@
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import Link from 'next/link';
+
 import React from 'react';
 
 const Navbar = async () => {
     const {getUser} = getKindeServerSession();
     const user = await getUser();
     console.log(user)
+
     const menuNav = <>
-       <li><Link href={'/'}>Home</Link></li>
-       <li><Link href={'/'}>Profile</Link></li>
-     
-    </>
+       <li><Link href={'/'} className='text-secondary text-base'>Home</Link></li>
+       <li><Link href={'/profile'} className='text-secondary text-base'> Profile</Link></li>
+     </>
+
     return (
-        <div className="navbar bg-base-100">
+     <section className='bg-white shadow-xl'>
+           <div className="navbar w-11/12 mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -35,27 +38,28 @@ const Navbar = async () => {
               {menuNav}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className=" text-2xl text-secondary font-bold">Blog<span className='text-blue-500'>Nest</span></a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu navliks menu-horizontal px-1 gap-4">
             {menuNav}
           </ul>
         </div>
         <div className="navbar-end gap-4">
          {
             user ? <>
-              <Link href='/api/auth/logout'>
+              <Link className='px-3 py-2 font-semibold rounded-md bg-blue-500 text-white' href='/api/auth/logout'>
             Logout
             </Link>
             </> : <>
-                <Link href="/api/auth/login">
+                <Link className='px-3 py-2 font-semibold rounded-md bg-blue-500 text-white' href="/api/auth/login">
             Login
             </Link>
             </>         
             }
         </div>
       </div>
+     </section>
     );
 };
 
