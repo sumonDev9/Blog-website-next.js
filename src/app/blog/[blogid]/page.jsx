@@ -1,25 +1,8 @@
 
-// const BlogDetails  = async({params}) => {
-//  const {id} = params;
-//  const data = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
-//  const post = await data.json()
-//  console.log(post)
-//     return (
-//         <div>
-//             welcome{post.id}
-//         </div>
-//     );
-// };
-
-
-  
-// export default BlogDetails ;
-// app/blog/[blogid]/page.js
-
 import React from 'react';
 
 const BlogDetails = async ({ params }) => {
-  const { blogid } = params; // URL থেকে 'blogid' প্যারামিটারটি নিয়ে আসা
+  const { blogid } = params; 
   const data = await fetch(`https://jsonplaceholder.typicode.com/posts/${blogid}`);
 
   if (!data.ok) {

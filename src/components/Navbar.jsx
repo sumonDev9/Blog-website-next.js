@@ -7,11 +7,12 @@ import React from 'react';
 const Navbar = async () => {
     const {getUser} = getKindeServerSession();
     const user = await getUser();
-    console.log(user)
+    // console.log(user)
 
     const menuNav = <>
        <li><Link href={'/'} className='text-secondary text-base'>Home</Link></li>
-       <li><Link href={'/profile'} className='text-secondary text-base'> Profile</Link></li>
+       <li><Link href={'/profile'} className='text-secondary text-base'> Profile</Link></li> 
+      
      </>
 
     return (
