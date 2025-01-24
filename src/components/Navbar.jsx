@@ -1,4 +1,5 @@
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import React from 'react';
@@ -38,7 +39,7 @@ const Navbar = async () => {
               {menuNav}
             </ul>
           </div>
-          <a className=" text-2xl text-secondary font-bold">Blog<span className='text-blue-500'>Nest</span></a>
+        <Image src="/blog.png" width={150} height={100} alt='blog'/> 
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu navliks menu-horizontal px-1 gap-4">
