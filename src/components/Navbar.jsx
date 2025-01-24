@@ -1,4 +1,4 @@
-import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
+import { getKindeServerSession, LogoutLink } from '@kinde-oss/kinde-auth-nextjs/server';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -50,9 +50,9 @@ const Navbar = async () => {
         <div className="navbar-end gap-4">
          {
             user ? <>
-              <Link className='px-3 py-2 font-semibold rounded-md bg-blue-500 text-white' href='/api/auth/logout'>
+              <LogoutLink className='px-3 py-2 font-semibold rounded-md bg-blue-500 text-white' href='/api/auth/logout'>
             Logout
-            </Link>
+            </LogoutLink>
             </> : <>
                 <Link className='px-3 py-2 font-semibold rounded-md bg-blue-500 text-white' href="/api/auth/login">
             Login
